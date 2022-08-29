@@ -7,14 +7,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WebDriverChrome {
 	private static WebDriver driver;
 	
-	WebDriverChrome(){
+	WebDriverChrome(WebDriver driver){
 	}
 	
 	public static WebDriver getDriver() {
 		if (driver == null) {
 			driver = new ChromeDriver();
 		}
-	//	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	
