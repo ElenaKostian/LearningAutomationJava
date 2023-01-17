@@ -60,13 +60,27 @@ public class CalculatorPage extends AbstractPage{
 	@FindBy(xpath="//*[@id=\"select_container_116\"]/md-select-menu//md-option")
 	List<WebElement> series;
 	
-	@FindBy(xpath="//*[@id='mainForm']/div[2]/div/md-card/md-card-content/div/div[1]/form/div[20]/button")
+	@FindBy(xpath="//button[@aria-label='Add to Estimate']")
 	WebElement submitButton;
 	
-	@FindBy(xpath="//*[@id='compute']//md-list-item[3]/div")
-	WebElement estemateResultProvisioningModel;
+	@FindBy(xpath="//*[@id='compute']/md-list/md-list-item/div[1]")
+	List<WebElement> estemateResults;
 	
+	@FindBy(xpath="//*[@id='select_value_label_88']")
+	WebElement datacenterLocationDropdown;
+	
+	@FindBy(xpath="//*[@id='select_container_124']//md-option")
+	List<WebElement> datacenterLocations;
 
+	@FindBy(xpath="//*[@id='select_130']")
+	WebElement committetUsageDropdown;
+	
+	@FindBy(xpath="//*[@id='select_container_131']/md-select-menu//md-option")
+	List<WebElement> committetUsages;
+	
+//	@FindBy(xpath="//*[@id='compute']/md-list/md-list-item[4]/div[1]/text()")
+//	WebElement textEstemateInstanceType;
+	
 	public CalculatorPage(WebDriver driver){
 		super(driver);
 		PageFactory.initElements(driver, this);
@@ -114,6 +128,12 @@ public class CalculatorPage extends AbstractPage{
 	
 	public CalculatorPage chooseSeries(int i) {
 		seriesDropdown.click();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		series.get(i-1).click();
 		return this;
 	}
@@ -146,8 +166,37 @@ public class CalculatorPage extends AbstractPage{
 		submitButton.click();
 		return this;
 	}
-	public String getTextEstemateResultProvisioningModel() {
-		return estemateResultProvisioningModel.getText();
+
+	public CalculatorPage chooseDatacenterLocation(int i) {
+		datacenterLocationDropdown.click();
+		datacenterLocations.get(i).click();
+		return this;
+	}
+
+	public CalculatorPage chooseCommittetUsage(int i) {
+		committetUsageDropdown.click();
+		committetUsages.get(i).click();
+		return this;
 	}
 	
+	public String getTextEstemateResult(String nameOfField) {
+		String value;
+				
+		for(WebElement field: estemateResults) {
+			value = field.getText();
+			if(value.contains(nameOfField)) {
+				if(value.contains("\n")) {
+					
+					value =  new StringBuilder(value).delete(value.indexOf('\n'), value.length()-1).toString();
+				}
+				System.out.println("["+value+"]");
+				return value;
+			}
+		}
+		return null;
+	}
+
+
+	
+
 }
