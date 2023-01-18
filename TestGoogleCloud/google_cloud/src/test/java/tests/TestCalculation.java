@@ -7,10 +7,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.CalculatorPage;
 import pages.HomePage;
+import pages.MyEmailPage;
 import pages.SearchPage;
+import pages.YopmailHomePage;
 
 public class TestCalculation {
 	private WebDriver driver = new ChromeDriver();
+	private WebDriver driver2 = new ChromeDriver();
 
 	@Test
 	public void culculateCloudPricingTest() {
@@ -34,14 +37,15 @@ public class TestCalculation {
 		Assert.assertEquals("Operating System / Software: Free", calculator.getTextEstemateResult("Operating System / Software"));
 		Assert.assertEquals("GPU dies: 1 NVIDIA TESLA P4d", calculator.getTextEstemateResult("GPU"));
 		
-		/*Next task:
-	  	Select 'EMAIL ESTIMATE'.
-		In a new tab, open https://yopmail.com/ or a similar temporary email–generating service.
-		Copy the email generated in yopmail.com.
-		Return to the calculator and enter the above email into the email field.
-		Press 'SEND EMAIL'.
-		Wait for the cost estimate email and check that the emailed 'Total Estimated Monthly Cost' matches the result in the calculator.*/
+		YopmailHomePage yopmailHomePage = new YopmailHomePage(driver2);
+		yopmailHomePage.openHomePage();
+		MyEmailPage myEmail = yopmailHomePage.createNewEmail("Myemail");
+		String email = myEmail.getAliasAddres();
+		calculator.sendEmail(email);
+		System.out.println(email);
+		
 		driver.quit();
+		driver2.quit();
 	}
 
 }

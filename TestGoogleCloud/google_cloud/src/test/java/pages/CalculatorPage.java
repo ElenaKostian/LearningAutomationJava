@@ -78,6 +78,15 @@ public class CalculatorPage extends AbstractPage{
 	@FindBy(xpath="//*[@id='select_container_131']/md-select-menu//md-option")
 	List<WebElement> committetUsages;
 	
+	@FindBy(xpath="//*[@id='Email Estimate']")
+	WebElement buttonSendEmail;
+	
+	@FindBy(xpath="//*[@id='input_544']")
+	WebElement inputEmailName;
+	
+	@FindBy(xpath = "//button[@aria-label='Send Email']")
+	WebElement buttonSendEstimationToEmal;
+	
 //	@FindBy(xpath="//*[@id='compute']/md-list/md-list-item[4]/div[1]/text()")
 //	WebElement textEstemateInstanceType;
 	
@@ -106,22 +115,15 @@ public class CalculatorPage extends AbstractPage{
 
 	public CalculatorPage chooseOperatorSystem(int n) {
 		operatorSystemDropdown.click();
-		if(n<=11 || n>0) {
-			operatorSystems.get(n-1).click();
-		}else {
-			System.out.println("value "+ n + " was send, please use value from 1 to 11");
-		}	
+		operatorSystems.get(n-1).click();
 		return this;
 	}
 	
 
 	public CalculatorPage chooseProvisioningModel(int n) {
 		provisioningModelDropdown.click();
-		if(n<=3 || n>0) {
-			provisioningModels.get(n-1).click();
-		}else {
-			System.out.println("value "+ n + " was send, please use value from 1 to 11");
-		}	
+		provisioningModels.get(n-1).click();
+	
 		return this;
 		
 	}
@@ -186,15 +188,20 @@ public class CalculatorPage extends AbstractPage{
 			value = field.getText();
 			if(value.contains(nameOfField)) {
 				if(value.contains("\n")) {
-					
 					value =  new StringBuilder(value).delete(value.indexOf('\n'), value.length()-1).toString();
 				}
-				System.out.println("["+value+"]");
 				return value;
 			}
 		}
 		return null;
 	}
+	
+	public void sendEmail(String name) {
+		buttonSendEmail.click();
+		inputEmailName.sendKeys(name);
+		buttonSendEstimationToEmal.click();
+	}
+	
 
 
 	
