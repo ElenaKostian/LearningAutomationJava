@@ -207,13 +207,13 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 2023-03-06 08:46:00,758 DEBUG internal.ThreadLocalRandom [main] -Dio.netty.initialSeedUniquifier: 0x4adfd3c8476e7255
 2023-03-06 08:46:03,324 INFO  [main] Page https://account.mail.ru/is opened
 2023-03-06 08:46:06,207 INFO  [main] adress is filled by maxkrovkin
-2023-03-06 08:46:06,723 INFO  [main] password [Test4You!] is entered
+2023-03-06 08:46:06,723 INFO  [main] password is entered
 2023-03-06 08:46:12,929 INFO  [main] all cookies are accepted
 2023-03-06 08:46:16,689 INFO  [main] the user is logout
 2023-03-06 08:46:16,703 TRACE websocketx.WebSocket08FrameEncoder [AsyncHttpClient-1-4] Encoding WebSocket Frame opCode=8 length=26
 2023-03-06 08:46:19,896 INFO  [main] Page https://account.mail.ru/is opened
 2023-03-06 08:46:22,241 INFO  [main] adress is filled by maxkrovkin
-2023-03-06 08:46:22,706 INFO  [main] password [Test4You!] is entered
+2023-03-06 08:46:22,706 INFO  [main] password is entered
 2023-03-06 08:46:28,069 INFO  [main] all cookies are accepted
 2023-03-06 08:46:28,621 INFO  [main] New mail is saved
 2023-03-06 08:46:30,199 INFO  [main] Email is saved as Draft
@@ -223,7 +223,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 2023-03-06 08:46:42,195 TRACE websocketx.WebSocket08FrameEncoder [AsyncHttpClient-1-7] Encoding WebSocket Frame opCode=8 length=26
 2023-03-06 08:46:45,768 INFO  [main] Page https://account.mail.ru/is opened
 2023-03-06 08:46:48,207 INFO  [main] adress is filled by maxkrovkin
-2023-03-06 08:46:48,616 INFO  [main] password [Test4You!] is entered
+2023-03-06 08:46:48,616 INFO  [main] password is entered
 2023-03-06 08:46:53,837 INFO  [main] all cookies are accepted
 2023-03-06 08:46:55,653 INFO  [main] Page Drafts is open
 2023-03-06 08:46:55,817 INFO  [main] Last saved draft mail is open
