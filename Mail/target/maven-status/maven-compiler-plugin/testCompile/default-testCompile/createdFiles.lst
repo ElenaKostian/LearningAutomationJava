@@ -1,0 +1,14 @@
+com\gmailtest\model\MailCredentials.class
+com\gmailtest\pages\HomePage.class
+com\gmailtest\service\UserCreator.class
+com\gmailtest\pages\MailRuPage.class
+com\gmailtest\util\UserUtils.class
+com\gmailtest\model\MailObject.class
+com\gmailtest\pages\AbstractPage.class
+com\gmailtest\service\TestDataReader.class
+com\gmailtest\test\MailTest.class
+com\gmailtest\util\TestListener.class
+com\gmailtest\pages\EmailObjectPage.class
+com\gmailtest\pages\LoginPage.class
+com\gmailtest\test\TestConditions.class
+com\gmailtest\driver\Driver.class
