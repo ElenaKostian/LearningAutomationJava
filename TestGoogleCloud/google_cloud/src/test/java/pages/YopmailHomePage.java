@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import model.Email;
+
 public class YopmailHomePage extends AbstractPage{
 	private final String URL = "https://yopmail.com/";
 	private String newMailAdress;
@@ -32,8 +34,8 @@ public class YopmailHomePage extends AbstractPage{
 		return this;
 	}
 	
-	public MyEmailPage createNewEmail(String emailName) {
-		inputNewEmailName.sendKeys(emailName);
+	public MyEmailPage createNewEmail(Email email) {
+		inputNewEmailName.sendKeys(email.getUsername());
 		newMailAdress = dailyDomain.getText();
 		buttonCreateEmail.click();
 		return new MyEmailPage(driver);

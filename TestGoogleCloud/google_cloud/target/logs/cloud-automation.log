@@ -1,0 +1,19 @@
+2023-03-06 12:22:41,641 INFO  [main] Test is started
+2023-03-06 12:22:51,121 INFO  [main] HomePage: page is oppened
+2023-03-06 12:22:51,360 INFO  [main] Homepage: cookies are agreed
+2023-03-06 12:22:51,448 INFO  [main] HomePage: Value [Google Cloud Pricing Calculator] is enter in search box
+2023-03-06 12:22:51,523 INFO  [main] HomePage: Search function is used
+2023-03-06 12:22:57,657 INFO  [main] SearchPage: first result is opened
+2023-03-06 12:22:57,961 INFO  [main] CalculatorPage: computerEngineTab is selected
+2023-03-06 12:22:57,998 INFO  [main] CalculatorPage: select numberOfInstens: [4]
+2023-03-06 12:22:58,528 INFO  [main] CalculatorPage: selected operator System: [1]
+2023-03-06 12:22:59,010 INFO  [main] CalculatorPage: selected Provisioning Model: [1]
+2023-03-06 12:23:00,534 INFO  [main] CalculatorPage: selected Series: [1]
+2023-03-06 12:23:01,060 INFO  [main] CalculatorPage: selected Machine Type: [4]
+2023-03-06 12:23:01,326 INFO  [main] CalculatorPage: selected Add GPUs
+2023-03-06 12:23:01,845 INFO  [main] CalculatorPage: selected GPU: [4]
+2023-03-06 12:23:02,336 INFO  [main] CalculatorPage: selected Number of GPUs: [1]
+2023-03-06 12:23:02,829 INFO  [main] CalculatorPage: selected Datacenter Location: [1]
+2023-03-06 12:23:03,315 INFO  [main] CalculatorPage: selected Commite Usage: [2]
+2023-03-06 12:23:03,358 INFO  [main] CalculatorPage: estimate the form
+2023-03-06 12:23:04,484 INFO  [main] CalculatorPage: email with estimations is send to [test-automation-useralt.ho-4hv286j@yopmail.com]

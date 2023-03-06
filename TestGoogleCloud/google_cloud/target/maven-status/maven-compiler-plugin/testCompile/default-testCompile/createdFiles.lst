@@ -1,0 +1,13 @@
+tests\CommonConditions.class
+utils\TestListener.class
+driver\SingaltoneDriver.class
+pages\HomePage.class
+pages\CalculatorPage.class
+pages\YopmailHomePage.class
+model\Email.class
+service\EmailCreator.class
+service\TestDataReader.class
+pages\AbstractPage.class
+pages\SearchPage.class
+tests\TestCalculation.class
+pages\MyEmailPage.class

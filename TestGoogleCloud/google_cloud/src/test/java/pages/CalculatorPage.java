@@ -4,6 +4,8 @@ import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -18,73 +20,73 @@ public class CalculatorPage extends AbstractPage{
 	@FindBy(xpath = "//md-tab-item/div[@title='Compute Engine']")
 	WebElement computerEngineTab;
 
-	@FindBy(xpath = "//input[@id='input_90']")
+	@FindBy(xpath = "//input[@id='input_94']")
 	WebElement numberOfInstens;
 	
-	@FindBy(xpath = "//*[@id=\"select_value_label_82\"]/span[2]")
+	@FindBy(xpath = "//*[@id='select_value_label_86']/span[2]")
 	WebElement operatorSystemDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_104']//md-option")
+	@FindBy(xpath = "//*[@id='select_container_108']//md-option") // +1
 	List<WebElement> operatorSystems;
 	
-	@FindBy(xpath = "//*[@id=\"select_value_label_83\"]/span[2]") 
+	@FindBy(xpath = "//*[@id=\"select_value_label_87\"]/span[2]") 
 	WebElement provisioningModelDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_108']//md-option/div")
+	@FindBy(xpath = "//*[@id='select_container_112']//md-option/div")
 	List<WebElement> provisioningModels;
  
-	@FindBy(xpath = "//*[@id='select_value_label_86']/span[2]")
+	@FindBy(xpath = "//*[@id='select_value_label_90']/span[2]")
 	WebElement machineTypeDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_118']//md-option/div[1]")
+	@FindBy(xpath = "//*[@id='select_container_122']//md-option/div[1]")
 	List<WebElement> machineTypes;
 	
 	@FindBy(xpath = "//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[12]/div[1]/md-input-container/md-checkbox/div[1]")
 	WebElement tickAddGPUs;
  
-	@FindBy(xpath = "//*[@id='select_461']")
+	@FindBy(xpath = "//*[@id='select_464']")
 	WebElement gPUDropdawn;
 	
-	@FindBy(xpath = "//*[@id='select_container_462']//md-option") 
+	@FindBy(xpath = "//*[@id='select_container_465']//md-option") 
 	List<WebElement> gPUDs;
 	
-	@FindBy(xpath = "//*[@id='select_463']/md-select-value")
+	@FindBy(xpath = "//*[@id='select_466']/md-select-value")
 	WebElement gPUNumberDropdawn;
 	
-	@FindBy(xpath = "//*[@id='select_container_464']//md-option")
+	@FindBy(xpath = "//*[@id='select_container_467']//md-option")
 	List<WebElement> gPUDNumbers;
 	
-	@FindBy(xpath="//*[@id='select_value_label_85']")
+	@FindBy(xpath="//*[@id='select_value_label_89']")
 	WebElement seriesDropdown;
 	
-	@FindBy(xpath="//*[@id=\"select_container_116\"]/md-select-menu//md-option")
+	@FindBy(xpath="//*[@id='select_container_120']/md-select-menu//md-option")
 	List<WebElement> series;
 	
-	@FindBy(xpath="//button[@aria-label='Add to Estimate']")
+	@FindBy(xpath="//div[@class='layout-align-end-start layout-row']/button")
 	WebElement submitButton;
 	
 	@FindBy(xpath="//*[@id='compute']/md-list/md-list-item/div[1]")
 	List<WebElement> estemateResults;
 	
-	@FindBy(xpath="//*[@id='select_value_label_88']")
+	@FindBy(xpath="//*[@id='select_value_label_92']")
 	WebElement datacenterLocationDropdown;
 	
-	@FindBy(xpath="//*[@id='select_container_124']//md-option")
+	@FindBy(xpath="//*[@id='select_container_128']//md-option")
 	List<WebElement> datacenterLocations;
 
-	@FindBy(xpath="//*[@id='select_130']")
+	@FindBy(xpath="//*[@id='select_134']")
 	WebElement committetUsageDropdown;
 	
-	@FindBy(xpath="//*[@id='select_container_131']/md-select-menu//md-option")
+	@FindBy(xpath="//*[@id='select_container_135']/md-select-menu//md-option")
 	List<WebElement> committetUsages;
 	
 	@FindBy(xpath="//*[@id='Email Estimate']")
 	WebElement buttonSendEmail;
 	
-	@FindBy(xpath="//*[@id='input_544']")
+	@FindBy(xpath="//*[@id='input_546']")
 	WebElement inputEmailName;
 	
-	@FindBy(xpath = "//button[@aria-label='Send Email']")
+	@FindBy(xpath = "//md-dialog-actions/button[@class='md-raised md-primary cpc-button md-button md-ink-ripple']")
 	WebElement buttonSendEstimationToEmal;
 	
 //	@FindBy(xpath="//*[@id='compute']/md-list/md-list-item[4]/div[1]/text()")
@@ -105,17 +107,20 @@ public class CalculatorPage extends AbstractPage{
 	public CalculatorPage useComputerEngineTab(WebDriver driver) {
 		switchToCalculateFrame(driver);
 		computerEngineTab.click();
+		logger.info("CalculatorPage: computerEngineTab is selected");
 		return this;
 	}
 
 	public CalculatorPage addNumberOfInstens(int i) {
 		numberOfInstens.sendKeys(""+i);
+		logger.info("CalculatorPage: select numberOfInstens: [" + i + "]");
 		return this;
 	}
 
 	public CalculatorPage chooseOperatorSystem(int n) {
 		operatorSystemDropdown.click();
 		operatorSystems.get(n-1).click();
+		logger.info("CalculatorPage: selected operator System: [" + n + "]");
 		return this;
 	}
 	
@@ -123,7 +128,7 @@ public class CalculatorPage extends AbstractPage{
 	public CalculatorPage chooseProvisioningModel(int n) {
 		provisioningModelDropdown.click();
 		provisioningModels.get(n-1).click();
-	
+		logger.info("CalculatorPage: selected Provisioning Model: [" + n + "]");
 		return this;
 		
 	}
@@ -137,47 +142,55 @@ public class CalculatorPage extends AbstractPage{
 			e.printStackTrace();
 		}
 		series.get(i-1).click();
+		logger.info("CalculatorPage: selected Series: [" + i + "]");
 		return this;
 	}
 
 	public CalculatorPage chooseMachineType(int n) {
 		machineTypeDropdown.click();
 		machineTypes.get(n-1).click();
+		logger.info("CalculatorPage: selected Machine Type: [" + n + "]");
 		return this;
 		
 	}
 
-	public CalculatorPage chooseAddGPUs(String string) {
+	public CalculatorPage chooseAddGPUs() {
 		tickAddGPUs.click();
+		logger.info("CalculatorPage: selected Add GPUs");
 		return this;
 	}
 
 	public CalculatorPage chooseNumberOfGPUs(int i) {
 		gPUNumberDropdawn.click();
 		gPUDNumbers.get(i).click();
+		logger.info("CalculatorPage: selected Number of GPUs: [" + i + "]");
 		return this;
 	}
 
 	public CalculatorPage chooseGPU(int n) {
 		gPUDropdawn.click();
-		gPUDs.get(n).click();
+		gPUDs.get(n-1).click();
+		logger.info("CalculatorPage: selected GPU: [" + n + "]");
 		return this;
 	}
 
 	public CalculatorPage addToEstimate() {
 		submitButton.click();
+		logger.info("CalculatorPage: estimate the form");
 		return this;
 	}
 
 	public CalculatorPage chooseDatacenterLocation(int i) {
 		datacenterLocationDropdown.click();
-		datacenterLocations.get(i).click();
+		datacenterLocations.get(i-1).click();
+		logger.info("CalculatorPage: selected Datacenter Location: [" + i + "]");
 		return this;
 	}
 
 	public CalculatorPage chooseCommittetUsage(int i) {
 		committetUsageDropdown.click();
-		committetUsages.get(i).click();
+		committetUsages.get(i-1).click();
+		logger.info("CalculatorPage: selected Commite Usage: [" + i + "]");
 		return this;
 	}
 	
@@ -200,6 +213,7 @@ public class CalculatorPage extends AbstractPage{
 		buttonSendEmail.click();
 		inputEmailName.sendKeys(name);
 		buttonSendEstimationToEmal.click();
+		logger.info("CalculatorPage: email with estimations is send to [" + name + "]");
 	}
 	
 
