@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="27.203" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="15.731" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\ELENA_~1\AppData\Local\Temp\surefire14339057136372742024\surefirebooter4555272255211200634.jar C:\Users\Elena_Kostian\AppData\Local\Temp\surefire14339057136372742024 2023-03-06T12-22-36_949-jvmRun1 surefire14730813841808730238tmp surefire_015150849513755444189tmp"/>
+    <property name="sun.java.command" value="C:\Users\ELENA_~1\AppData\Local\Temp\surefire14072346948886479757\surefirebooter17821179899563261921.jar C:\Users\Elena_Kostian\AppData\Local\Temp\surefire14072346948886479757 2023-03-14T15-53-50_674-jvmRun1 surefire14305271124577821480tmp surefire_014476667082167604067tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Elena_Kostian\eclipse-workspace\google_cloud\target\test-classes;C:\Users\Elena_Kostian\eclipse-workspace\google_cloud\target\classes;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-java\3.141.0\selenium-java-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-api\3.141.0\selenium-api-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\3.141.0\selenium-chrome-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\3.141.0\selenium-edge-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\3.141.0\selenium-firefox-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\3.141.0\selenium-ie-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-opera-driver\3.141.0\selenium-opera-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\3.141.0\selenium-remote-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\3.141.0\selenium-safari-driver-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\seleniumhq\selenium\selenium-support\3.141.0\selenium-support-3.141.0.jar;C:\Users\Elena_Kostian\.m2\repository\net\bytebuddy\byte-buddy\1.8.15\byte-buddy-1.8.15.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\Elena_Kostian\.m2\repository\com\google\guava\guava\25.0-jre\guava-25.0-jre.jar;C:\Users\Elena_Kostian\.m2\repository\com\google\code\findbugs\jsr305\1.3.9\jsr305-1.3.9.jar;C:\Users\Elena_Kostian\.m2\repository\org\checkerframework\checker-compat-qual\2.0.0\checker-compat-qual-2.0.0.jar;C:\Users\Elena_Kostian\.m2\repository\com\google\errorprone\error_prone_annotations\2.1.3\error_prone_annotations-2.1.3.jar;C:\Users\Elena_Kostian\.m2\repository\com\google\j2objc\j2objc-annotations\1.1\j2objc-annotations-1.1.jar;C:\Users\Elena_Kostian\.m2\repository\org\codehaus\mojo\animal-sniffer-annotations\1.14\animal-sniffer-annotations-1.14.jar;C:\Users\Elena_Kostian\.m2\repository\com\squareup\okhttp3\okhttp\3.11.0\okhttp-3.11.0.jar;C:\Users\Elena_Kostian\.m2\repository\com\squareup\okio\okio\1.14.0\okio-1.14.0.jar;C:\Users\Elena_Kostian\.m2\repository\io\github\bonigarcia\webdrivermanager\3.3.0\webdrivermanager-3.3.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\Elena_Kostian\.m2\repository\com\google\code\gson\gson\2.8.5\gson-2.8.5.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\commons\commons-lang3\3.8.1\commons-lang3-3.8.1.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\httpcomponents\httpclient\4.5.6\httpclient-4.5.6.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\httpcomponents\httpcore\4.4.10\httpcore-4.4.10.jar;C:\Users\Elena_Kostian\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Elena_Kostian\.m2\repository\commons-codec\commons-codec\1.10\commons-codec-1.10.jar;C:\Users\Elena_Kostian\.m2\repository\org\rauschig\jarchivelib\1.0.0\jarchivelib-1.0.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\commons\commons-compress\1.18\commons-compress-1.18.jar;C:\Users\Elena_Kostian\.m2\repository\org\jsoup\jsoup\1.11.3\jsoup-1.11.3.jar;C:\Users\Elena_Kostian\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\Elena_Kostian\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\Elena_Kostian\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\Elena_Kostian\.m2\repository\commons-io\commons-io\2.6\commons-io-2.6.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\logging\log4j\log4j-api\2.20.0\log4j-api-2.20.0.jar;C:\Users\Elena_Kostian\.m2\repository\org\apache\logging\log4j\log4j-core\2.20.0\log4j-core-2.20.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ELENA_~1\AppData\Local\Temp\surefire14339057136372742024\surefirebooter4555272255211200634.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ELENA_~1\AppData\Local\Temp\surefire14072346948886479757\surefirebooter17821179899563261921.jar"/>
     <property name="surefire.suiteXmiFiles" value="src\test\resources\testing-smoke.xml"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -40,7 +40,7 @@
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="file.encoding" value="Cp1252"/>
-    <property name="browser" value="firefox"/>
+    <property name="browser" value="chrome"/>
     <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
     <property name="localRepository" value="C:\Users\Elena_Kostian\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
@@ -59,5 +59,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="culculateCloudPricingTest" classname="tests.TestCalculation" time="22.85"/>
+  <testcase name="culculateCloudPricingTest" classname="tests.TestCalculation" time="12.302"/>
 </testsuite>

@@ -23,22 +23,28 @@ public class CalculatorPage extends AbstractPage{
 	@FindBy(xpath = "//input[@id='input_94']")
 	WebElement numberOfInstens;
 	
-	@FindBy(xpath = "//*[@id='select_value_label_86']/span[2]")
+	@FindBy(xpath = "//*[@id='select_value_label_85']/span[2]")
 	WebElement operatorSystemDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_108']//md-option") // +1
+	@FindBy(xpath = "//*[@id='select_container_107']//md-option") // +1
 	List<WebElement> operatorSystems;
 	
-	@FindBy(xpath = "//*[@id=\"select_value_label_87\"]/span[2]") 
+	@FindBy(xpath = "//*[@id='select_value_label_86']/span[2]") 
 	WebElement provisioningModelDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_112']//md-option/div")
+	@FindBy(xpath = "//*[@id='select_container_111']//md-option/div[1]")
 	List<WebElement> provisioningModels;
+	
+	@FindBy(xpath="//*[@id='select_value_label_88']")
+	WebElement seriesDropdown;
+	
+	@FindBy(xpath="//*[@id='select_container_119']/md-select-menu//md-option")
+	List<WebElement> series;
  
 	@FindBy(xpath = "//*[@id='select_value_label_90']/span[2]")
 	WebElement machineTypeDropdown;
 	
-	@FindBy(xpath = "//*[@id='select_container_122']//md-option/div[1]")
+	@FindBy(xpath = "//*[@id='select_container_121']//md-option/div[1]")
 	List<WebElement> machineTypes;
 	
 	@FindBy(xpath = "//*[@id=\"mainForm\"]/div[2]/div/md-card/md-card-content/div/div[1]/form/div[12]/div[1]/md-input-container/md-checkbox/div[1]")
@@ -56,12 +62,7 @@ public class CalculatorPage extends AbstractPage{
 	@FindBy(xpath = "//*[@id='select_container_467']//md-option")
 	List<WebElement> gPUDNumbers;
 	
-	@FindBy(xpath="//*[@id='select_value_label_89']")
-	WebElement seriesDropdown;
-	
-	@FindBy(xpath="//*[@id='select_container_120']/md-select-menu//md-option")
-	List<WebElement> series;
-	
+
 	@FindBy(xpath="//div[@class='layout-align-end-start layout-row']/button")
 	WebElement submitButton;
 	
@@ -127,6 +128,12 @@ public class CalculatorPage extends AbstractPage{
 
 	public CalculatorPage chooseProvisioningModel(int n) {
 		provisioningModelDropdown.click();
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		provisioningModels.get(n-1).click();
 		logger.info("CalculatorPage: selected Provisioning Model: [" + n + "]");
 		return this;
