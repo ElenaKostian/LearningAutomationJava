@@ -27,16 +27,13 @@ public class HomePage extends AbstractPage {
 	@FindBy(xpath="//*[@id='cmpbntyestxt']")
 	private WebElement acceptAllCookiesButton;
 	
-	@FindBy(xpath="//span[@class='ph-dropdown-icon svelte-14x1gy5']")
-	private WebElement iconDropdownMenuClosed;
+	@FindBy(xpath="//div/img[@class='ph-avatar-img svelte-dfhuqc']")
+	private WebElement iconDropdownMenu;
 	
-	@FindBy(xpath="//span[@class='ph-dropdown-icon svelte-14x1gy5 ph-dropdown-icon__rotated-right']")
-	private WebElement iconDropdownMenuOpened;
-	
-	@FindBy(xpath="//div[@class='ph-item ph-item__hover-active svelte-6ia8p0']/div[2]")
+	@FindBy(xpath="/html/body/div[4]/div[1]/div/div[3]/div/div[2]/div/div[2]/div")
 	private WebElement singOutLink;
 	
-	@FindBy(xpath="//*[@id='ph-whiteline']/div/div[3]/div/div/div[1]/div/div[2]")
+	@FindBy(xpath="//div[@class='ph-desc__email svelte-1popff4']")
 	private WebElement userMailAdress;
 	
 	@FindBy(xpath="//a[@href='/compose/']")
@@ -87,22 +84,29 @@ public class HomePage extends AbstractPage {
 	}
 	
 	public MailRuPage singOut() {
-		iconDropdownMenuClosed.click();
+		iconDropdownMenu.click();
 		singOutLink.click();
 		logger.info("the user is logout");
 		return new MailRuPage(driver);
 	}
 	
 	public String getUserMailAdress() {
-		iconDropdownMenuClosed.click();
-		String user = userMailAdress.getText();
-		iconDropdownMenuOpened.click();
+		iconDropdownMenu.click();
+		String user = userMailAdress.getAttribute("aria-label");
+		iconDropdownMenu.click();
+		logger.info("taken UserMailAdress is [" + user + "]");
 		return user;
 		}
 	
 	public EmailObjectPage createNewMail() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		newEmailCreationButton.click();
-		logger.info("New mail is saved" );
+		logger.info("New mail is opened");
 		return new EmailObjectPage(driver);
 	}
 	
@@ -145,7 +149,9 @@ public class HomePage extends AbstractPage {
 	}
 
 	public String getEndpoint() {
-		return driver.getCurrentUrl();
+		String endpoint =  driver.getCurrentUrl();
+		logger.info("taken endpoint is [" + endpoint + "]");
+		return endpoint;
 	}
 	
 

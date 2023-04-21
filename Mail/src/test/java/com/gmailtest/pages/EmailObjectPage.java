@@ -5,8 +5,10 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,7 +26,7 @@ public class EmailObjectPage extends AbstractPage {
 	@FindBy(xpath = "//input[@name='Subject']")
 	private WebElement subjectInput;
 
-	@FindBy(xpath = "//div[@class='editable-container-8y57']/div/div[1]/br") /////////////////// doesn't work
+	@FindBy(xpath = "//div[@tabindex='505']/div[1]")
 	private WebElement bodyInput;
 
 	@FindBy(xpath = "//span[@class='vkuiButton__in']")
@@ -45,16 +47,23 @@ public class EmailObjectPage extends AbstractPage {
 
 	public EmailObjectPage fillInSubjectEmail(String subject) {
 		subjectInput.sendKeys(subject);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.backgroundColor = 'red'", subjectInput);
 		return this;
 	}
 
 	public EmailObjectPage fillInBodyEmail(String bodyText) {
-		bodyInput.sendKeys(bodyText);
+		bodyInput.click();
+        new Actions(driver)
+        	.sendKeys(bodyText)
+        	.perform();
 		return this;
 	}
 
 	public EmailObjectPage saveDraftEmail() {
-		emailButtons.get(1).click();
+        JavascriptExecutor js = (JavascriptExecutor)driver;
+        js.executeScript("arguments[0].click();", emailButtons.get(1));
+		//emailButtons.get(1).click();
 		logger.info("Email is saved as Draft");
 		return this;
 	}
@@ -102,10 +111,28 @@ public class EmailObjectPage extends AbstractPage {
 		logger.info("subject data [" + string + "] is taken from the email");
 		return string;
 	}
+	
+	private String getBody(Boolean isSentEmail) {
+		WebElement body = null;
+		String string = "";
+		if (isSentEmail == false) {
+			body = driver.findElement(By.xpath("//div[@tabindex='505']/div[1]/div/div/div/div[1]"));
+			string = body.getText();
+			logger.info("Body is taken from draft letter: ["+ string + "]");
+		}else {
+			body = driver.findElement(By.xpath("//div[@class='cl_071931_mr_css_attr']/div[1]"));
+			string = body.getText();
+			logger.info("Body is taken from send letter: ["+ string + "]");
+		}
+		logger.info("subject data [" + string + "] is taken from the email");
+		return string;
+	}
 
 	public MailObject getEmailData(Boolean isSentEmail) {
-		MailObject email = new MailObject(getAdress(isSentEmail), getSubject(isSentEmail), "");
+		MailObject email = new MailObject(getAdress(isSentEmail), getSubject(isSentEmail), getBody(isSentEmail));
 		return email;
 	}
+
+
 
 }

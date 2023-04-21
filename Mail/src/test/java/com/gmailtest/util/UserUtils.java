@@ -13,8 +13,24 @@ public class UserUtils {
 	public static HomePage LogIn(WebDriver driver) {
 		 LoginPage loginPage = new LoginPage(driver).openLoginPage()
 				 									.enterAdress(UserCreator.getTestdataUserName());
+		
+		 try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		 
 		 HomePage homepage = loginPage.enterPassword(UserCreator.getTestdataPassword());
 		 homepage.acceptAllCookies();
+		 
+		 try {
+				Thread.sleep(1000);;
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		 
 		 return homepage;
 	}
 	
